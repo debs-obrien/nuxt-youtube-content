@@ -2,7 +2,7 @@
   <div class="container">
     <div>
       <Logo />
-      <h1 class="title">my-nuxt</h1>
+      <h1 class="title">Learn Nuxt with Debbie</h1>
       <NuxtLink to="/about" class="button--green">About</NuxtLink>
       <NuxtLink to="/products" class="button--green">Products</NuxtLink>
 
@@ -52,7 +52,7 @@ export default {}
     'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   display: block;
   font-weight: 300;
-  font-size: 100px;
+  font-size: 60px;
   color: #35495e;
   letter-spacing: 1px;
 }
