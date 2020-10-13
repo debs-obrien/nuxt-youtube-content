@@ -4,8 +4,12 @@
     <NuxtLink to="/" class="text-left text-grey-600 hover:underline">
       Home
     </NuxtLink>
+    <button @click="$fetch">Refresh</button>
+    <p v-if="$fetchState.pending">Fetching mountains...</p>
+    <p v-else-if="$fetchState.error">An error occured :(</p>
     <ProductCard
       v-for="mountain in mountains"
+      v-else
       :key="mountain.title"
       :product="mountain"
       class="mb-4 flex felx-col text-left"
