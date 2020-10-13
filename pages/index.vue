@@ -4,6 +4,8 @@
       <Logo />
       <h1 class="title">my-nuxt</h1>
       <NuxtLink to="/about" class="button--green">About</NuxtLink>
+      <NuxtLink to="/products" class="button--green">Products</NuxtLink>
+
       <div class="links">
         <a
           href="https://nuxtjs.org/"
