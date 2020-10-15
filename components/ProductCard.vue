@@ -51,8 +51,9 @@ export default {
   }
 }
 </script>
-<style lang="postcss">
+<style scoped>
 img {
   height: 120px;
+  object-fit: cover;
 }
 </style>
