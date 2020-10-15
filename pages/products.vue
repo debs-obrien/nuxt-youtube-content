@@ -10,7 +10,7 @@
     >
       Show Mountains
     </button>
-    <LazyProductCard v-if="show" />
+    <LazyShopProductCard v-if="show" />
   </div>
 </template>
 <script>

@@ -20,7 +20,16 @@ export default {
   plugins: [],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
-  components: true,
+  // components: true,
+  components: {
+    dirs: [
+      '~/components',
+      {
+        path: '~/components/shop/',
+        prefix: 'Shop'
+      }
+    ]
+  },
 
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
