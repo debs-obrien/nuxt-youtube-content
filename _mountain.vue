@@ -19,6 +19,8 @@
       </NuxtLink>
       <div class="relative px-4 sm:px-6 lg:px-8">
         <div class="text-lg max-w-prose mx-auto mb-6">
+          <pre>Mountain: {{ mountain }}</pre>
+
           <p
             class="text-base text-center leading-6 text-indigo-600 font-semibold tracking-wide uppercase"
           >
@@ -57,6 +59,16 @@
     </div>
   </div>
 </template>
+<script>
+export default {
+  async asyncData({ params, $axios }) {
+    const mountain = await $axios.$get(
+      `https://api.nuxtjs.dev/mountains/${params.mountain}`
+    )
+    return { mountain }
+  }
+}
+</script>
 <style scoped>
 svg {
   width: 20px;
