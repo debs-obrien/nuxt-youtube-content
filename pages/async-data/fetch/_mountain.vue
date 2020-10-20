@@ -15,15 +15,20 @@
 export default {
   // ** Example Nuxt asyncData hook with js fetch method **
 
-  async asyncData({ params, $axios }) {
-    const mountain = await fetch(
-      `https://api.nuxtjs.dev/mountains/${params.mountain}/debbie`
-    ).then((res) => res.json())
+  async asyncData({ params }) {
+    try {
+      const mountain = await fetch(
+        `https://api.nuxtjs.dev/mountains/${params.mountain}/debbie`
+      ).then((response) => {
+        if (response.ok) {
+          return response.json()
+        }
+        throw new Error(response.status)
+      })
 
-    if (mountain.slug === params.mountain) {
       return { mountain }
-    } else {
-      throw new Error('API error')
+    } catch (error) {
+      return { error }
     }
   }
 }

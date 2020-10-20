@@ -20,8 +20,13 @@ export default {
   async fetch() {
     this.mountain = await fetch(
       `https://api.nuxtjs.dev/mountains/${this.$route.params.mountain}/debbie`
-    ).then((res) => res.json())
-    throw new Error('API error  ')
+    ).then((response) => {
+      if (response.ok) {
+        return response.json()
+      } else {
+        throw new Error('Something went wrong')
+      }
+    })
   },
 
   data() {

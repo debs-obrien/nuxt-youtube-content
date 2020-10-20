@@ -19,17 +19,9 @@ export default {
       const mountain = await $axios.$get(
         `https://api.nuxtjs.dev/mountains/${params.mountain}/debbie`
       )
-
       return { mountain }
     } catch (error) {
-      console.error('AsyncData + Axios:' + error)
       return { error }
-    }
-  },
-
-  data() {
-    return {
-      mountain: {} // needed if using Nuxt fetch
     }
   }
 }
