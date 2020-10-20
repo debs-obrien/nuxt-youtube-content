@@ -17,7 +17,7 @@ export default {
   async asyncData({ params, $axios }) {
     try {
       const mountain = await $axios.$get(
-        `https://api.nuxtjs.dev/mountains/${params.mountain}/debbie`
+        `https://api.nuxtjs.dev/mountains/${params.mountain}`
       )
       return { mountain }
     } catch (error) {

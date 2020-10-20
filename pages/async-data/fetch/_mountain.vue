@@ -18,12 +18,12 @@ export default {
   async asyncData({ params }) {
     try {
       const mountain = await fetch(
-        `https://api.nuxtjs.dev/mountains/${params.mountain}/debbie`
+        `https://api.nuxtjs.dev/mountains/${params.mountain}`
       ).then((response) => {
         if (response.ok) {
           return response.json()
         }
-        throw new Error(response.status)
+        throw new Error('there has been a problem')
       })
 
       return { mountain }

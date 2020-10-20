@@ -41,16 +41,6 @@
           class="block mt-1 text-lg leading-tight font-semibold text-gray-900 hover:underline"
           >AsyncData with fetch- {{ mountain.title }}
         </NuxtLink>
-        <NuxtLink
-          :to="`/fetch/axios/${mountain.slug}`"
-          class="block mt-1 text-lg leading-tight font-semibold text-gray-900 hover:underline"
-          >Fetch with axios- {{ mountain.title }}
-        </NuxtLink>
-        <NuxtLink
-          :to="`/fetch/fetch/${mountain.slug}`"
-          class="block mt-1 text-lg leading-tight font-semibold text-gray-900 hover:underline"
-          >Fetch with fetch- {{ mountain.title }}
-        </NuxtLink>
 
         <p class="mt-2 text-gray-600">
           {{ mountain.description }}
