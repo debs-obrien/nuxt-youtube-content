@@ -1,6 +1,9 @@
 <template>
-  <div class="container mx-auto">
-    <div class="relative py-16 bg-white overflow-hidden">
+  <div class="container mx-auto mt-10">
+    <div v-if="error" class="text-red-700">
+      <ErrorAlert :message="error.message" />
+    </div>
+    <div v-else class="relative py-16 bg-white overflow-hidden">
       <NuxtLink to="/products">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -63,10 +66,14 @@
 <script>
 export default {
   async asyncData({ params, $axios }) {
-    const mountain = await $axios.$get(
-      `https://api.nuxtjs.dev/mountains/${params.mountain}`
-    )
-    return { mountain }
+    try {
+      const mountain = await $axios.$get(
+        `https://api.nuxtjs.dev/mountains/${params.mountain}/debbie`
+      )
+      return { mountain }
+    } catch (error) {
+      return { error }
+    }
   }
 }
 </script>

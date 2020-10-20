@@ -1,6 +1,9 @@
 <template>
-  <div class="container mx-auto">
-    <div class="relative py-16 bg-white overflow-hidden">
+  <div class="container mx-auto mt-10">
+    <div v-if="error" class="text-red-700">
+      <ErrorAlert :message="error.message" />
+    </div>
+    <div v-else class="relative py-16 bg-white overflow-hidden">
       <NuxtLink to="/products">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -62,14 +65,21 @@
 </template>
 <script>
 export default {
-  async asyncData({ params, $axios }) {
-    const mountain = await fetch(
-      `https://api.nuxtjs.dev/mountains/${params.mountain}`
-    ).then((response) => {
-      return response.json()
-    })
+  async asyncData({ params }) {
+    try {
+      const mountain = await fetch(
+        `https://api.nuxtjs.dev/mountains/${params.mountain}/debbie`
+      ).then((response) => {
+        if (response.ok) {
+          return response.json()
+        }
+        throw new Error('Error fetching the API')
+      })
 
-    return { mountain }
+      return { mountain }
+    } catch (error) {
+      return { error }
+    }
   }
 }
 </script>
