@@ -34,12 +34,12 @@
         <NuxtLink
           :to="`/async-data/axios/${mountain.slug}`"
           class="block mt-1 text-lg leading-tight font-semibold text-gray-900 hover:underline"
-          >AsyncData with axios- {{ mountain.title }}
+          >Axios- {{ mountain.title }}
         </NuxtLink>
         <NuxtLink
           :to="`/async-data/fetch/${mountain.slug}`"
           class="block mt-1 text-lg leading-tight font-semibold text-gray-900 hover:underline"
-          >AsyncData with fetch- {{ mountain.title }}
+          >Fetch API- {{ mountain.title }}
         </NuxtLink>
 
         <p class="mt-2 text-gray-600">
