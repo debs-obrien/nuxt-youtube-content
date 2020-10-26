@@ -64,13 +64,24 @@
   </div>
 </template>
 <script>
+import axios from 'axios'
 export default {
-  async asyncData({ params, $axios }) {
+  // async asyncData({ params, $axios }) {
+  //   try {
+  //     const mountain = await $axios.$get(
+  //       `https://api.nuxtjs.dev/mountains/${params.mountain}/debbie`
+  //     )
+  //     return { mountain }
+  //   } catch (error) {
+  //     return { error }
+  //   }
+  // }
+  async asyncData({ params }) {
     try {
-      const mountain = await $axios.$get(
+      const { data } = await axios.get(
         `https://api.nuxtjs.dev/mountains/${params.mountain}/debbie`
       )
-      return { mountain }
+      return { mountain: data }
     } catch (error) {
       return { error }
     }

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "nuxt --port 8000",
+    "dev": "nuxt --port 4000",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
@@ -26,6 +26,7 @@
     "@nuxtjs/axios": "^5.12.2",
     "@nuxtjs/pwa": "^3.0.2",
     "@tailwindcss/ui": "^0.6.2",
+    "axios": "^0.20.0",
     "core-js": "^3.6.5",
     "nuxt": "^2.14.6"
   },
