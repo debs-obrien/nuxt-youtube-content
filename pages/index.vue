@@ -1,71 +1,32 @@
 <template>
   <div class="container">
-    <div>
+    <div class="background-image">
       <Logo />
       <h1 class="title">Learn Nuxt with Debbie</h1>
-      <NuxtLink to="/about" class="button--green">About</NuxtLink>
-      <NuxtLink to="/products" class="button--green">Products</NuxtLink>
-
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
     </div>
+    <figure v-for="(item, i) in images" :key="i">
+      <img
+        class="w-auto rounded-lg mx-auto p-2"
+        :src="require(`~/assets/${item}.jpg`)"
+      />
+    </figure>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  data() {
+    return {
+      images: ['aconcagua', 'mont-blanc']
+    }
+  }
+}
 </script>
 
 <style scoped>
-/* Sample `apply` at-rules with Tailwind CSS
-.container {
-@apply min-h-screen flex justify-center items-center text-center mx-auto;
-}
-*/
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 60px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
+.background-image {
+  margin: 20px;
+  padding: 20px;
+  background: url('~assets/mont-blanc.jpg');
 }
 </style>
