@@ -19,6 +19,28 @@ export default {
         hid: 'description',
         name: 'description',
         content: 'my amazing application about page'
+      },
+      { name: 'twitter:site', content: 'debs_obrien' },
+      { name: 'twitter:card', content: 'summary_large_image' },
+      {
+        hid: 'twitter:url',
+        name: 'twitter:url',
+        content: 'https://debbie.codes'
+      },
+      {
+        hid: 'twitter:title',
+        name: 'twitter:title',
+        content: 'My amazing website'
+      },
+      {
+        hid: 'twitter:description',
+        name: 'twitter:description',
+        content: 'This blog post is incredible.'
+      },
+      {
+        hid: 'twitter:image',
+        name: 'twitter:image',
+        content: '/icon.png'
       }
     ],
     link: [
