@@ -1,111 +1,91 @@
 <template>
   <div>
-    <Nuxt />
+    <nav>
+      <ul>
+        <li>
+          <NuxtLink to="/">Home</NuxtLink>
+        </li>
+        <li>
+          <NuxtLink to="/about">About</NuxtLink>
+        </li>
+      </ul>
+    </nav>
+    <main>
+      <Nuxt />
+    </main>
   </div>
 </template>
-<script>
-export default {
-  head: {
-    title: 'Learn Nuxt with Debbie',
-    titleTemplate: '%s | Nuxt',
-    htmlAttrs: {
-      lang: 'en',
-      amp: true
-    },
-    bodyAttrs: {
-      class: ['dark-mode', 'debbie']
-    },
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      {
-        hid: 'description',
-        name: 'description',
-        content: 'my amazing application'
-      }
-    ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
-  }
-}
-</script>
 <style>
-html {
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
-  font-size: 16px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
+:root {
+  --primary-color: #00c58e;
 }
-.body {
-  background-color: aqua;
-}
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji,
+    Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
   margin: 0;
 }
 
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
+a,
+a:visited {
   text-decoration: none;
-  padding: 10px 30px;
+  color: inherit;
 }
 
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
+a:hover,
+a.nuxt-link-exact-active {
+  color: var(--primary-color);
 }
 
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
-}
-
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
-}
-.container {
+main {
   margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding: 0 1rem;
+  max-width: 1280px;
   text-align: center;
 }
 
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 60px;
-  color: #35495e;
-  letter-spacing: 1px;
+nav {
+  padding: 0 1rem;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+nav ul {
+  flex-direction: row;
 }
 
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
+li {
+  margin: 0 0.5rem;
+  padding: 0.25rem;
+  font-size: 1.2rem;
+}
+button {
+  background: var(--primary-color);
+  padding: 0.75rem 1.5rem;
+  outline: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-weight: 500;
+  text-transform: uppercase;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  letter-spacing: 0.5px;
+  margin: 0 0.5rem;
 }
 
-.links {
-  padding-top: 15px;
+button:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  opacity: 0.8;
 }
 </style>
